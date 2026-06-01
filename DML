@@ -1,0 +1,40 @@
+Apply Data Manipulation Language (DML) commands on the created database.
+Insert + Select output
+Update output
+Delete output
+
+CREATE TABLE Student(
+    Student_ID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Email VARCHAR(50),
+    Age INT
+);
+
+INSERT INTO Student VALUES
+(101,'Janvi','janvi@gmail.com',20);
+
+INSERT INTO Student VALUES
+(102,'Rahul','rahul@gmail.com',21);
+
+INSERT INTO Student VALUES
+(103,'Priya','priya@gmail.com',19);
+
+SELECT * FROM Student;
+
+UPDATE Student
+SET Age = 22
+WHERE Student_ID = 102;
+
+SELECT * FROM Student;
+
+DELETE FROM Student
+WHERE Student_ID = 103;
+
+SELECT * FROM Student;
+
+SELECT Name, Age
+FROM Student;
+
+SELECT *
+FROM Student
+WHERE Age > 20;
