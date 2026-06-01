@@ -1,0 +1,36 @@
+To execute SQL queries using string functions and aggregate functions.
+
+CREATE TABLE Student(
+    Student_ID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Email VARCHAR(50),
+    Age INT
+);
+
+INSERT INTO Student VALUES
+(101,'Janvi','janvi@gmail.com',20),
+(102,'Rahul','rahul@gmail.com',22),
+(103,'Priya','priya@gmail.com',19),
+(104,'Aman','aman@gmail.com',21);
+
+SELECT * FROM Student;
+
+SELECT UPPER(Name) FROM Student;
+
+SELECT LOWER(Name) FROM Student;
+
+SELECT Name,LENGTH(Name) FROM Student;
+
+SELECT CONCAT(Name,' - ',Email) FROM Student;
+
+SELECT Name,SUBSTRING(Name,1,3) FROM Student;
+
+SELECT COUNT(*) FROM Student;
+
+SELECT MAX(Age) FROM Student;
+
+SELECT MIN(Age) FROM Student;
+
+SELECT AVG(Age) FROM Student;
+
+SELECT SUM(Age) FROM Student;
