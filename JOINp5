@@ -1,0 +1,59 @@
+To implement different types of JOIN operations in SQL.
+
+CREATE TABLE Student(
+    Student_ID INT PRIMARY KEY,
+    Name VARCHAR(50)
+);
+
+CREATE TABLE Course(
+    Course_ID INT PRIMARY KEY,
+    Course_Name VARCHAR(50)
+);
+
+CREATE TABLE Enrollment(
+    Student_ID INT,
+    Course_ID INT
+);
+
+INSERT INTO Student VALUES
+(101,'Janvi'),
+(102,'Rahul'),
+(103,'Priya');
+
+INSERT INTO Course VALUES
+(1,'DBMS'),
+(2,'Java'),
+(3,'Python');
+
+INSERT INTO Enrollment VALUES
+(101,1),
+(101,2),
+(102,3);
+
+SELECT Student.Student_ID,
+       Student.Name,
+       Course.Course_Name
+FROM Student
+INNER JOIN Enrollment
+ON Student.Student_ID = Enrollment.Student_ID
+INNER JOIN Course
+ON Enrollment.Course_ID = Course.Course_ID;
+
+SELECT Student.Student_ID,
+       Student.Name,
+       Enrollment.Course_ID
+FROM Student
+LEFT JOIN Enrollment
+ON Student.Student_ID = Enrollment.Student_ID;
+
+SELECT Student.Student_ID,
+       Student.Name,
+       Enrollment.Course_ID
+FROM Student
+RIGHT JOIN Enrollment
+ON Student.Student_ID = Enrollment.Student_ID;
+
+SELECT Student.Name,
+       Course.Course_Name
+FROM Student
+CROSS JOIN Course;
