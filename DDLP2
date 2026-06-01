@@ -1,0 +1,30 @@
+CREATE TABLE Student(
+    Student_ID INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) UNIQUE,
+    Age INT
+);
+
+CREATE TABLE Course(
+    Course_ID INT PRIMARY KEY,
+    Course_Name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Enrollment(
+    Student_ID INT,
+    Course_ID INT,
+    PRIMARY KEY(Student_ID, Course_ID),
+    FOREIGN KEY(Student_ID) REFERENCES Student(Student_ID),
+    FOREIGN KEY(Course_ID) REFERENCES Course(Course_ID)
+);
+
+INSERT INTO Student VALUES
+(101,'Janvi','janvi@gmail.com',20),
+(102,'Rahul','rahul@gmail.com',21);
+
+INSERT INTO Course VALUES
+(1,'DBMS'),
+(2,'Java');
+
+SELECT * FROM Student;
+SELECT * FROM Course;
