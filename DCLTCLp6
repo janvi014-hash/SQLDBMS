@@ -1,0 +1,40 @@
+To study and perform DCL and TCL commands in SQL.
+
+CREATE TABLE Student(
+    Student_ID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT
+);
+
+INSERT INTO Student VALUES
+(101,'Janvi',20);
+
+START TRANSACTION;
+
+INSERT INTO Student VALUES
+(102,'Rahul',21);
+
+ROLLBACK;
+
+START TRANSACTION;
+
+INSERT INTO Student VALUES
+(103,'Priya',19);
+
+COMMIT;
+
+START TRANSACTION;
+
+INSERT INTO Student VALUES
+(104,'Aman',22);
+
+SAVEPOINT S1;
+
+INSERT INTO Student VALUES
+(105,'Neha',20);
+
+ROLLBACK TO S1;
+
+COMMIT;
+
+SELECT * FROM Student;
